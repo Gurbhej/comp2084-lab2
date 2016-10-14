@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ContosoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ContosoModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -76,7 +76,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ContosoModelStoreContainer">
+        <EntityContainer Name="ContosoModel1StoreContainer">
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Enrollments" EntityType="Self.Enrollments" Schema="dbo" store:Type="Tables" />
@@ -98,7 +98,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ContosoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ContosoModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Course">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -142,7 +142,7 @@
         </EntityType>
         <Association Name="FK_Courses_DepartmentID">
           <End Role="Departments" Type="Self.Department" Multiplicity="1" />
-          <End Role="Courses" Type="ContosoModel.Course" Multiplicity="*" />
+          <End Role="Courses" Type="ContosoModel1.Course" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Departments">
               <PropertyRef Name="DepartmentID" />
@@ -153,7 +153,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Enrollments_CourseID">
-          <End Role="Courses" Type="ContosoModel.Course" Multiplicity="1" />
+          <End Role="Courses" Type="ContosoModel1.Course" Multiplicity="1" />
           <End Role="Enrollments" Type="Self.Enrollment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
@@ -176,8 +176,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ContosoEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Courses" EntityType="ContosoModel.Course" />
+        <EntityContainer Name="gurbhejEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courses" EntityType="ContosoModel1.Course" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Enrollments" EntityType="Self.Enrollment" />
           <EntitySet Name="Students" EntityType="Self.Student" />
@@ -199,9 +199,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ContosoModelStoreContainer" CdmEntityContainer="ContosoEntities">
+        <EntityContainerMapping StorageEntityContainer="ContosoModel1StoreContainer" CdmEntityContainer="gurbhejEntities">
           <EntitySetMapping Name="Courses">
-            <EntityTypeMapping TypeName="ContosoModel.Course">
+            <EntityTypeMapping TypeName="ContosoModel1.Course">
               <MappingFragment StoreEntitySet="Courses">
                 <ScalarProperty Name="CourseID" ColumnName="CourseID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
@@ -211,7 +211,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Departments">
-            <EntityTypeMapping TypeName="ContosoModel.Department">
+            <EntityTypeMapping TypeName="ContosoModel1.Department">
               <MappingFragment StoreEntitySet="Departments">
                 <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -220,7 +220,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Enrollments">
-            <EntityTypeMapping TypeName="ContosoModel.Enrollment">
+            <EntityTypeMapping TypeName="ContosoModel1.Enrollment">
               <MappingFragment StoreEntitySet="Enrollments">
                 <ScalarProperty Name="EnrollmentID" ColumnName="EnrollmentID" />
                 <ScalarProperty Name="CourseID" ColumnName="CourseID" />
@@ -230,7 +230,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Students">
-            <EntityTypeMapping TypeName="ContosoModel.Student">
+            <EntityTypeMapping TypeName="ContosoModel1.Student">
               <MappingFragment StoreEntitySet="Students">
                 <ScalarProperty Name="StudentID" ColumnName="StudentID" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

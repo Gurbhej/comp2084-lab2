@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h1>Departments</h1>
-
+    <a href="department-details.aspx"> Add a Department </a>
     <asp:GridView ID="grdDepartments" runat="server" CssClass="table table-striped"
         autogeneratecolumns="false">
         <Columns>

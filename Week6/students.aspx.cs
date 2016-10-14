@@ -5,32 +5,33 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-// add 2 references to access the database
+// add references to access the database
 using System.Web.ModelBinding;
 
 namespace Week6
 {
-    public partial class departments : System.Web.UI.Page
+    public partial class students : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // get the departments and display in the gridview
-            getDepartments();
+            // get the students and display in the gridview
+            getStudents();
         }
 
-        protected void getDepartments()
+        protected void getStudents()
         {
             // connect to db
             var conn = new gurbhejEntities();
 
             // run the query using LINQ
-            var Departments = from d in conn.Departments
-                              select d;
+            var Students = from s in conn.Students
+                              select s;
 
             // display query result in gridview
-            grdDepartments.DataSource = Departments.ToList();
-            grdDepartments.DataBind();
+            grdStudents.DataSource = Students.ToList();
+            grdStudents.DataBind();
 
         }
     }
+
 }

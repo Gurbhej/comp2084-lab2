@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\RFreeman\OneDrive\Documents\Teaching\COMP2084\Week6\Week6\ContosoModel.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\georgian\serverside\comp2084-week6\Week6\ContosoModel1.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

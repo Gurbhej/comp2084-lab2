@@ -13,10 +13,10 @@ namespace Week6
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ContosoEntities : DbContext
+    public partial class gurbhejEntities : DbContext
     {
-        public ContosoEntities()
-            : base("name=ContosoEntities")
+        public gurbhejEntities()
+            : base("name=gurbhejEntities")
         {
         }
     
