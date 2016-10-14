@@ -6,7 +6,7 @@
 
     <div class="form-group">
         <label for="txtName" class="col-sm-3 control-label">Department Name: </label>
-        <asp:TextBox ID="txtName" runat="server"  required type="text" /> 
+        <asp:TextBox ID="txtName" runat="server" required type="text" /> 
         
     </div>
     <div class="form-group">
